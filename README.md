@@ -12,6 +12,8 @@ Esta guía pretende adentrar al lector en el uso de git con un lenguaje mas "hum
 - [Creando otras lineas temporales `branch`](#creando-otras-lineas-temporales-branch)
 - [Tomando una decisión `merge`](#tomando-una-decisión-merge)
 - [La pesadilla de la manipulación temporal `conflict`](#la-pesadilla-de-la-manipulación-temporal-conflict)
+- [La comunidad de viajeros en el tiempo](#la-comunidad-de-viajeros-en-el-tiempo)
+- [Trabajando en equipo `remote`](#trabajando-en-equipo-remote)
 
 ### ¿Que es GIT?:
 
@@ -98,3 +100,18 @@ Una vez terminemos de decidir debemos crear un nuevo commit con nuestros cambios
 ![](./images/pesadilla.png)
 
 _Nota: Es importante entender que los conflictos de merge no son un problema, es una característica de git que nos permite decidir que cambios deseamos cuando hacemos merge de dos commit que modificaron la misma linea de un archivo._
+
+### La comunidad de viajeros en el tiempo
+
+Existe una comunidad llamada [github](https://github.com/) donde todos pueden mostrar sus repositorios y contribuir libremente, aunque esta guía esta pensada para todo público (programador o no programador), lamentablemente la gran mayoría de repositorios alojados en este sitio son proyectos de programación ya que la git (y el sitio de github) fueron creados pensados para el mundo de desarrollo digital, aun así esto no nos debe frenar a subir repositorios de todo tipo y encontrarnos con proyectos de todo tipo.
+
+### Trabajando en equipo `remote`
+
+En esta sección vamos a explicar como trabajar con proyectos remotos (que estén alojados en internet).
+
+Ya tenemos finalizada nuestra historia y [agregamos nuestro repositorio remoto](COMMANDS.md#agregar-repositorio-remoto-git-remote-add-nombre-url-repo) con el nombre `origin` y [subimos nuestro `branch` `verde`](#subir-cambios-git-push-repo-rama).
+
+Ahora [si vemos todos nuestros `branch`](COMMANDS.md#ver-listado-de-ramas-git-branch) podemos notar que poseemos dos veces el `branch` `verde` uno remoto llamado `origin/verde` y uno local llamado `verde`, el `origin/verde` representa el `branch` guardado en internet y el que se llama `verde` es el está en nuestra maquina.
+
+Los `branch` remotos no se actualizan automáticamente asi que debemos hacerlo de [forma manual](COMMANDS.md#actualizar-branch-remoto-git-fetch-repo) y una vez realizado esta actualización debemos hacer un `merge` entre nuestro `branch` local y el remoto.
+También es posible hacer una [actualización remota y local al mismo tiempo.](COMMANDS.md#actualizar-branch-remoto-y-local-git-pull-repo)

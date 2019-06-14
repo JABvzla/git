@@ -2,7 +2,7 @@
 
 _by José Bonito_
 
-Esta guía pretende adentrar al lector en el uso de git con un lenguaje mas "humano" sacando los tecnicismos y demostrando las posibilidades de dicha herramienta mas allá de la programación.
+Esta guía pretende adentrar al lector en el uso de git con un lenguaje más "humano" sacando los tecnicismos y demostrando las posibilidades de dicha herramienta más allá de la programación.
 
 - [¿Que es GIT?](#que-es-git)
 - [Un problema común](#un-problema-común)
@@ -21,7 +21,7 @@ Imagina tener una maquina del tiempo donde puedas ver todos los cambios realizad
 
 ### Un problema común
 
-Supongamos que pretendemos escribir una historia y luego de llevar mas de media historia escrita se nos da la brillante idea de cambiar el comienzo de la historia, por suerte nos conocemos bien y sabemos que es una decisión de la que nos podemos arrepentir asi que creamos una copia del archivo, luego de terminar tenemos dos documentos con los nombres `historia.pdf` `historia_comienzo_alternativo.pdf`. Si seguimos este patrón, cada vez que esta situación se repita tendríamos documentos nuevos y peor aun si deseamos combinar algunos de estos documentos seria un total caos, además siempre tendríamos que predecir cuando es posible que nos "podamos arrepentir" para crear una copia del documento ya que de no ser asi se perdería.
+Supongamos que pretendemos escribir una historia y luego de llevar más de media historia escrita se nos da la brillante idea de cambiar el comienzo de la historia, por suerte nos conocemos bien y sabemos que es una decisión de la que nos podemos arrepentir asi que creamos una copia del archivo, luego de terminar tenemos dos documentos con los nombres `historia.pdf` `historia_comienzo_alternativo.pdf`. Si seguimos este patrón, cada vez que esta situación se repita tendríamos documentos nuevos y peor aun si deseamos combinar algunos de estos documentos seria un total caos, además siempre tendríamos que predecir cuando es posible que nos "podamos arrepentir" para crear una copia del documento ya que de no ser asi se perdería.
 
 Este caso lo vamos a resolver muy fácilmente con git pero antes vamos a poner en marcha nuestra maquina del tiempo.
 
@@ -43,7 +43,7 @@ Ahora que ya tenemos un repositorio andando podemos empezar a [ver el estado de 
 
 Es importante aclarar que nuestra maquina del tiempo llamada git solo nos permite viajar y manipular "puntos de control" previamente creados con git, estos "puntos de control" se llaman `commit` y asi es como nos referiremos a ellos de ahora en adelante (deja vu?).
 
-Un `commit` no es mas que un punto de guardado del estado actual de nuestro proyecto, los `commit` también guardan entre otra serie de datos: creador, fecha, mensaje y un `delta`.
+Un `commit` no es más que un punto de guardado del estado actual de nuestro proyecto, los `commit` también guardan entre otra serie de datos: creador, fecha, mensaje y un `delta`.
 
 - El creador: Es la persona que generó dicho commit, se guarda email y nombre, esto es muy útil cuando en un mismo repositorio colaboran varias personas para saber que cambios realizó cada quien.
 
@@ -57,7 +57,7 @@ Un `commit` no es mas que un punto de guardado del estado actual de nuestro proy
 
 ### Resolviendo un problema común
 
-El caso de la historia [anteriormente planteado](#un-problema-común) se resolvería sencillamente creando `commit` luego de cada cambio significativo, de modo que no importaría si en algún momento nos arrepentimos ya que podemos volver en cualquier momento.
+El caso de la historia [anteriormente planteado](#un-problema-común) se resolvería sencillamente creando un `commit` luego de cada cambio significativo, de modo que no importaría si en algún momento nos arrepentimos ya que podemos volver en cualquier momento.
 
 En la siguiente imagen se muestra el ejemplo donde en lugar de crear un documento nuevo con un inicio alternativo, simplemente se crea un commit `A` con el mensaje `Comienza historia` y luego un commit `B` con un mensaje `Cambia Inicio`.
 ![](./images/inicio-alternativo.png)
@@ -92,7 +92,7 @@ Aquí haré una pausa para detallar un posible "problema" que debemos enfrentar.
 
 ### La pesadilla de la manipulación temporal `conflict`
 
-Si realizamos un `merge` como el anterior nuestra maquina del tiempo nos dirá que hay un conflicto de merge, ya que git cuando hace un `merge` compara linea por linea entre dos `commit` y en este caso si nos traemos a nuestra rama `verde` los cambios de la rama `azul`, git no sabría con cual cambio quedarse entre los commit `B` y `C` ya que ambos modifican el inicio de la historia. El que git pueda detectar `merge conflict` realmente es una funcionalidad genial mas allá de tener un termino que da muy mala publicidad y ser muy "conflictivo".
+Si realizamos un `merge` como el anterior nuestra maquina del tiempo nos dirá que hay un conflicto de merge, ya que git cuando hace un `merge` compara linea por linea entre dos `commit` y en este caso si nos traemos a nuestra rama `verde` los cambios de la rama `azul`, git no sabría con cual cambio quedarse entre los commit `B` y `C` ya que ambos modifican el inicio de la historia. El que git pueda detectar `merge conflict` realmente es una funcionalidad genial más allá de tener un termino que da muy mala publicidad y ser muy "conflictivo".
 
 En este punto del merge git nos pedirá que decidamos con cual parte del inicio de la historia nos queremos quedar, y si alguna otra parte del documento fue modificada en ambas ramas, también debemos elegir con cual quedarnos.
 Una vez terminemos de decidir debemos crear un nuevo commit con nuestros cambios previamente seleccionados.
@@ -107,7 +107,7 @@ Existe una comunidad llamada [github](https://github.com/) donde todos pueden mo
 
 ### Trabajando en equipo `remote`
 
-En esta sección vamos a explicar como trabajar con proyectos remotos (que estén alojados en internet).
+En esta sección se explica como trabajar con proyectos remotos (que estén alojados en internet).
 
 Ya tenemos finalizada nuestra historia y [agregamos nuestro repositorio remoto](COMMANDS.md#agregar-repositorio-remoto-git-remote-add-nombre-url-repo) con el nombre `origin` y [subimos nuestro `branch` `verde`](#subir-cambios-git-push-repo-rama).
 
